@@ -1,0 +1,176 @@
+/*
+ reset css
+*/
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+ul, li {
+	list-style: none;
+}
+a {
+	color: #333;
+	text-decoration: none;
+}
+body {
+	font: 14px / 21px sans-serif;
+	color: #333;
+}
+h1 {
+	font: 700 30px / 70px sans-serif;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+h3 {
+	font: 700 60px / 80px sans-serif;
+	letter-spacing: 1px;
+    text-transform: uppercase;
+	margin-bottom: 21px;
+}
+p {
+	margin-bottom: 21px;
+}
+.container {
+	width: 100%;
+	margin: 0 auto;
+	max-width: 1000px;
+	padding: 0 15px;
+	position: relative;
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+/*
+ header
+*/
+
+header {
+	background-color: #ebebeb;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, .3);
+}
+header .logo {
+	float: left;
+}
+header .tab-nav {
+	float: right;
+	border-left: 1px solid rgb(218, 218, 218);
+	box-shadow: inset 1px 0 rgb(255, 255, 255);
+	position: relative;
+}
+header .tab-nav span {
+	content: '';
+	position: absolute;
+	width: 120px;
+	height: 70px;
+	background-color: #333;
+	top: 0;
+	left: 0;
+	transition: all 0.3s;
+}
+header .tab-nav li {
+	float: left;
+	line-height: 70px;
+	height: 70px;
+	font-size: 20px;
+	width: 120px;
+	text-align: center;
+	border-right: 1px solid rgb(218, 218, 218);
+	box-shadow: 1px 0 rgb(255, 255, 255);
+	position: relative;
+	cursor: pointer;
+}
+header .tab-nav li.active {
+	color: #fff;
+}
+
+/*
+ sections
+*/
+.section-wrap {
+	position: relative;
+	width: 100%;
+	height: calc(100vh - 70px);
+}
+.button {
+	display: inline-block;
+	line-height: 40px;
+	border: 1px solid #fff;
+	color: #fff;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0 40px;
+	font-weight: bold;
+	transition: all 0.3s;
+}
+.button:hover {
+	background-color: #fff;
+	color: #000;
+}
+.tab-panel {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding-top: 40px;
+	background: no-repeat center center / cover;
+	color: #fff;
+	display: none;
+}
+.tab-panel:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,.2);
+}
+.tab-panel.current {
+	display: block;
+}
+.tab-panel:nth-child(1) {
+	background-image: url(../images/work-1.jpg);
+}
+.tab-panel:nth-child(2) {
+	background-image: url(../images/work-2.jpg);
+}
+.tab-panel:nth-child(3) {
+	background-image: url(../images/work-3.jpg);
+}
+.tab-panel:nth-child(4) {
+	background-image: url(../images/work-4.jpg);
+}
+.tab-panel:nth-child(5) {
+	background-image: url(../images/work-5.jpg);
+}
+
+/*
+ animation
+*/
+.tab-panel .content h3, .tab-panel.current .content p {
+	opacity:0;
+	position: relative;
+	animation: fadeIn 2s forwards;
+}
+.tab-panel.current .content h3 {
+	animation-delay: 0s;
+}
+.tab-panel.current .content p {
+	animation-delay: 0.2s;
+}
+
+@keyframes fadeIn {
+	0% {
+		left: 80px;
+		opacity: 0;
+	}
+	100% {
+		left: 0;
+		opacity: 1;
+	}
+}
