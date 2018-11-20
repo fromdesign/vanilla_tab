@@ -152,7 +152,7 @@ header .tab-nav li.active {
 /*
  animation
 */
-.tab-panel .content h3, .tab-panel.current .content p {
+.tab-panel .content h3, .tab-panel.current .content p, .tab-panel.current .content a {
 	opacity:0;
 	position: relative;
 	animation: fadeIn 2s forwards;
@@ -163,7 +163,9 @@ header .tab-nav li.active {
 .tab-panel.current .content p {
 	animation-delay: 0.2s;
 }
-
+.tab-panel.current .content a {
+	animation-delay: 0.4s;
+}
 @keyframes fadeIn {
 	0% {
 		left: 80px;
